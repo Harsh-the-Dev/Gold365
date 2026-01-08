@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Gold365</title>
+  <link rel="icon" type="image/png" href="Images/title.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  
+  <style>
+    body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
+    /* Feature card top border effect */
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+    }
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #facc15, #f59e42);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 20;
+    }
+    .feature-card:hover::before,
+    .feature-card:focus::before,
+    .feature-card.group-hover::before {
+      transform: scaleX(1);
+    }
+
+    .modern-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07), 0 1.5px 6px 0 rgba(0,0,0,0.03);
+      transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+      background: #fff;
+    }
+    .modern-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #facc15, #f59e42);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 20;
+    }
+    .modern-card:hover::before,
+    .modern-card:focus::before {
+      transform: scaleX(1);
+    }
+    .modern-card:hover,
+    .modern-card:focus {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px 0 rgba(250,204,21,0.15), 0 2px 8px 0 rgba(0,0,0,0.06);
+    }
+
+    /* Testimonial Scroller */
+    .scroller {
+      max-width: 100%;
+    }
+
+    .scroller[data-animated="true"] {
+      overflow: hidden;
+      -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+      mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    }
+
+    .scroller[data-animated="true"] .scroller__inner {
+      width: max-content;
+      flex-wrap: nowrap;
+      animation: scroll 60s linear infinite;
+    }
+
+    .scroller:hover .scroller__inner {
+      animation-play-state: paused;
+    }
+    
+    .scroller__inner {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    @keyframes scroll {
+      to {
+        transform: translate(calc(-50% - 1rem));
+      }
+    }
+  </style>
+
+</head>
+<body class="bg-yellow-50 text-black font-sans">
+
+<!-- Navbar -->
+<nav class="w-full bg-white fixed top-0 left-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-4">
+    
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="https://wa.link/bansalexch" target="_blank" rel="noopener noreferrer">
+        <img src="Images/logo-5.png" alt="Gold365 Logo" class="h-10" />
+      </a>
+    </div>
+
+    <!-- Hamburger Menu Button (Tablet & Mobile Only) -->
+    <button id="mobile-menu-btn" class="lg:hidden flex items-center px-3 py-2 border rounded text-black border-gray-400 focus:outline-none" aria-label="Open Menu">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Navigation Links (Desktop) -->
+    <ul class="hidden lg:flex space-x-8 text-base font-medium text-black">
+      <li>
+        <a href="index.html" class="hover:text-yellow-500 font-bold">Home</a>
+      </li>
+      <li>
+        <a href="customersupport.html" class="hover:text-yellow-500 font-bold">Gold365 Customer care</a>
+      </li>
+      <li>
+        <a href="customerid.html" class="hover:text-yellow-500 font-bold">Gold365 Id</a>
+      </li>
+      <li>
+        <a href="onlineiplid.html" class="hover:text-yellow-500 font-bold">Gold365 IPL Online ID</a>
+      </li>
+    </ul>
+
+    <!-- CTA Button (Desktop) -->
+    <a href="https://wa.link/bansalexch" class="hidden lg:inline-block ml-4 bg-black text-white border-4 border-yellow-600 px-7 py-3 rounded-full hover:bg-yellow-500 transition-all text-sm font-bold">
+      Get New Gold365 ID
+    </a>
+  </div>
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-md border-t border-gray-200">
+    <ul class="flex flex-col space-y-2 px-6 py-4 text-base font-medium text-black">
+      <li>
+        <a href="index.html" class="hover:text-yellow-500 font-bold block">Home</a>
+      </li>
+      <li>
+        <a href="customersupport.html" class="hover:text-yellow-500 font-bold block">Gold365 Customer care</a>
+      </li>
+      <li>
+        <a href="customerid.html" class="hover:text-yellow-500 font-bold block">Gold365 Id</a>
+      </li>
+      <li>
+        <a href="onlineiplid.html" class="hover:text-yellow-500 font-bold block">Gold365 IPL Online ID</a>
+      </li>
+      <li>
+        <a href="https://wa.link/bansalexch" class="mt-2 w-full bg-black text-white border-4 border-yellow-600 px-7 py-4 rounded-full hover:bg-yellow-500 transition-all text-base font-bold block text-center">
+          Get New Gold365 ID
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<script>
+// Mobile menu toggle
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+}
+</script>
+
+<main class="pt-24">
+  <section class="bg-white py-16 sm:py-20 px-4 sm:px-6 md:px-8" id="privacy">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 text-center">
+        Privacy Policy
+      </h1>
+      <div class="prose lg:prose-xl max-w-none">
+        <p><strong>Confidentiality Agreement for Gold365</strong></p>
+        <p>This Confidentiality Agreement ("Agreement") is entered into by and between Gold365 ("the Company"), a provider of online betting services for sports, casino games, and esports, and the user ("User") who accesses or engages with the services offered by Gold365, including but not limited to live sports betting, casino games such as Teen Patti, Andar Bahar, Roulette, Baccarat, Poker, Slots, and Aviator, as well as esports betting on games like Dota 2, CS:GO, and Valorant. By registering for a Gold365 ID, depositing funds, placing bets, or otherwise utilizing the platform, the User agrees to be bound by the terms and conditions of this Agreement. The purpose of this Agreement is to establish the obligations of both the Company and the User in protecting confidential information shared during the use of Gold365’s services, ensuring a secure and trusted betting environment as emphasized on the Gold365 website.</p>
+        
+        <p>Gold365 is committed to maintaining the highest standards of data protection and privacy, as highlighted in its secure platform features, which include advanced encryption technology and secure payment gateways. The Company recognizes that Users provide sensitive personal and financial information to participate in betting activities, and this Agreement outlines the measures taken to safeguard such information, as well as the User’s responsibilities to maintain confidentiality. This Agreement applies to all interactions with Gold365, including account creation via WhatsApp, email communications, phone support, and the use of the platform’s mobile-friendly interface for betting on sports, casino games, or esports.</p>
+        
+        <p>Confidential information under this Agreement includes any data provided by the User during registration, such as full name, email address, phone number, and other personal identifiers required to create a Gold365 ID. It also encompasses financial details, including bank account information, payment method details, deposit and withdrawal records, and transaction histories. Additionally, confidential information includes the User’s betting activities, such as wagers placed on IPL cricket, football matches, casino games, or esports tournaments, as well as any communication with Gold365’s 24/7 customer support team via WhatsApp, email or phone (+91 98765 43210). Proprietary information about Gold365’s platform, including but not limited to its competitive odds, exclusive bonuses (e.g., welcome bonuses, cashback offers, daily promotions, and free spins), game mechanics (e.g., Aviator’s live multipliers or slot jackpots), and real-time analytics for live betting, is also considered confidential.</p>
+        
+        <p>Gold365 agrees to implement robust security measures to protect the User’s confidential information. The platform employs advanced encryption technology, as advertised on the Gold365 website, to ensure that all data transmitted during account creation, betting, deposits, and withdrawals remains secure from unauthorized access. Secure payment gateways are utilized to facilitate safe financial transactions, ensuring that deposits for betting on live sports or casino games and withdrawals of winnings are processed without compromising User data. Gold365 will not disclose the User’s confidential information to third parties except in cases required by law, such as compliance with regulatory authorities or court orders, or when necessary to process payments through trusted financial partners. The Company’s commitment to fair play, as certified on the platform, extends to maintaining transparency in how User data is handled, ensuring that all interactions are conducted in a secure and trustworthy manner.</p>
+        
+        <p>The User agrees to protect their Gold365 ID and account credentials, including passwords and login details, to prevent unauthorized access to their account. Users must not share their account information with others or disclose proprietary details about Gold365’s services, such as bonus structures, odds calculations, or game features, to third parties. If a User suspects a breach of their account security or unauthorized access, they must immediately notify Gold365’s support team through the available 24/7 channels. The User is also responsible for using the platform in accordance with Gold365’s responsible gaming guidelines, which include setting deposit limits and avoiding misuse of account information that could compromise confidentiality.</p>
+        
+        <p>Exceptions to confidentiality may occur when Gold365 is legally obligated to disclose information, such as in response to government regulations, legal proceedings, or audits related to online betting operations. Disclosure may also be necessary to facilitate secure payment processing, as outlined in the platform’s secure transaction features, or to investigate potential fraud or violations of Gold365’s terms and conditions. In such cases, Gold365 will limit disclosure to the minimum required and continue to protect the User’s data to the fullest extent possible.</p>
+        
+        <p>This Agreement remains in effect for the duration of the User’s engagement with Gold365, including while they hold an active Gold365 ID or participate in betting activities. If a User terminates their account, Gold365 will retain and protect any confidential information in accordance with applicable laws and the platform’s privacy policy. The User’s obligation to maintain confidentiality, particularly regarding proprietary platform information, survives account termination to prevent misuse of Gold365’s intellectual property or services.</p>
+        
+        <p>Gold365 reserves the right to amend this Agreement at any time to reflect changes in its operations, legal requirements, or industry standards. Any updates will be posted on the Gold365 website, and Users will be notified via email or platform notifications. Continued use of the platform after such updates constitutes acceptance of the revised terms. Users are encouraged to review the Agreement periodically to stay informed of their obligations.</p>
+        
+        <p>For any questions, concerns, or reports related to confidentiality or data protection, Users may contact Gold365’s 24/7 customer support team via WhatsApp, email or phone (+91 98765 43210). The support team is committed to responding promptly, typically within minutes, to address issues such as account security, data privacy, or transaction concerns, ensuring a seamless and secure betting experience.</p>
+        
+        <p>Conditions Apply: By accessing or using Gold365’s services, including but not limited to obtaining a Gold365 ID, placing bets, or engaging with customer support, the User acknowledges that this Agreement is subject to the terms and conditions outlined on the Gold365 website, including its privacy policy, responsible gaming guidelines, and other applicable policies. Gold365’s commitment to a secure and trusted platform, as emphasized in its promotional materials, underpins this Agreement, ensuring Users can bet on sports, casino games, and esports with confidence.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-gray-900 text-white pt-16 pb-10 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 md:gap-16">
+      
+      <!-- Logo and Description -->
+      <div class="flex flex-col gap-4">
+        <h2 class="text-2xl font-bold text-yellow-400">Gold365</h2>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Your trusted source for electrifying cricket betting experiences. Visit Gold365.net.in for expert tips, exclusive bonuses, and round-the-clock support.
+        </p>
+      </div>
+  
+      <!-- Navigation Links -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-semibold">Quick Links</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+          <li><a href="customersupport.html" class="hover:text-yellow-400">Customer Support</a></li>
+          <li><a href="customerid.html" class="hover:text-yellow-400">Customer ID</a></li>
+          <li><a href="onlineiplid.html" class="hover:text-yellow-400">Online IPL ID</a></li>
+        </ul>
+      </div>
+  
+      <!-- Subscribe Box -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-semibold">Subscribe</h3>
+        <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+          <label for="footer-email" class="text-sm text-gray-300">Get the latest updates and offers:</label>
+          <input type="email" id="footer-email" name="email" required placeholder="Enter your email"
+            class="px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+          <button type="submit"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded transition">Subscribe</button>
+        </form>
+      </div>
+  
+    </div>
+  
+    <!-- Bottom Bar -->
+    <div class="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <div class="mb-2 md:mb-0 text-center md:text-center">
+        © 2025 Gold365.net.in All rights reserved| R &#10084;
+      </div>
+      <div class="space-x-4">
+        <a href="privacy.html" class="hover:text-yellow-400">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-yellow-400">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+<!-- Add FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a2e8a4f96d.js" crossorigin="anonymous"></script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" aria-label="Scroll to top"
+  class="hidden fixed bottom-6 right-6 bg-yellow-700 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition">
+  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6 mx-auto">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<script>
+// Scroll to top button logic
+const scrollBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove('hidden');
+  } else {
+    scrollBtn.classList.add('hidden');
+  }
+});
+
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 800,
+      once: false,
+      offset: 50,
+      mirror: true,
+      disable: 'mobile',
+      startEvent: 'DOMContentLoaded',
+      disableMutationObserver: false,
+      delay: 0
+    });
+  });
+
+  // Refresh AOS on scroll
+  window.addEventListener('scroll', function () {
+    AOS.refresh();
+  });
+</script>
+</body>
+</html>

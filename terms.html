@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms and Conditions - Gold365</title>
+  <link rel="icon" type="image/png" href="Images/title.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  
+  <style>
+    body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
+    /* Feature card top border effect */
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+    }
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #facc15, #f59e42);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 20;
+    }
+    .feature-card:hover::before,
+    .feature-card:focus::before,
+    .feature-card.group-hover::before {
+      transform: scaleX(1);
+    }
+
+    .modern-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07), 0 1.5px 6px 0 rgba(0,0,0,0.03);
+      transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+      background: #fff;
+    }
+    .modern-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #facc15, #f59e42);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 20;
+    }
+    .modern-card:hover::before,
+    .modern-card:focus::before {
+      transform: scaleX(1);
+    }
+    .modern-card:hover,
+    .modern-card:focus {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px 0 rgba(250,204,21,0.15), 0 2px 8px 0 rgba(0,0,0,0.06);
+    }
+
+    /* Testimonial Scroller */
+    .scroller {
+      max-width: 100%;
+    }
+
+    .scroller[data-animated="true"] {
+      overflow: hidden;
+      -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+      mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    }
+
+    .scroller[data-animated="true"] .scroller__inner {
+      width: max-content;
+      flex-wrap: nowrap;
+      animation: scroll 60s linear infinite;
+    }
+
+    .scroller:hover .scroller__inner {
+      animation-play-state: paused;
+    }
+    
+    .scroller__inner {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    @keyframes scroll {
+      to {
+        transform: translate(calc(-50% - 1rem));
+      }
+    }
+  </style>
+
+</head>
+<body class="bg-yellow-50 text-black font-sans">
+
+<!-- Navbar -->
+<nav class="w-full bg-white fixed top-0 left-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-4">
+    
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="https://wa.link/bansalexch" target="_blank" rel="noopener noreferrer">
+        <img src="Images/logo-5.png" alt="Gold365 Logo" class="h-10" />
+      </a>
+    </div>
+
+    <!-- Hamburger Menu Button (Tablet & Mobile Only) -->
+    <button id="mobile-menu-btn" class="lg:hidden flex items-center px-3 py-2 border rounded text-black border-gray-400 focus:outline-none" aria-label="Open Menu">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Navigation Links (Desktop) -->
+    <ul class="hidden lg:flex space-x-8 text-base font-medium text-black">
+      <li>
+        <a href="index.html" class="hover:text-yellow-500 font-bold">Home</a>
+      </li>
+      <li>
+        <a href="customersupport.html" class="hover:text-yellow-500 font-bold">Gold365 Customer care</a>
+      </li>
+      <li>
+        <a href="customerid.html" class="hover:text-yellow-500 font-bold">Gold365 Id</a>
+      </li>
+      <li>
+        <a href="onlineiplid.html" class="hover:text-yellow-500 font-bold">Gold365 IPL Online ID</a>
+      </li>
+    </ul>
+
+    <!-- CTA Button (Desktop) -->
+    <a href="https://wa.link/bansalexch" class="hidden lg:inline-block ml-4 bg-black text-white border-4 border-yellow-600 px-7 py-3 rounded-full hover:bg-yellow-500 transition-all text-sm font-bold">
+      Get New Gold365 ID
+    </a>
+  </div>
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-md border-t border-gray-200">
+    <ul class="flex flex-col space-y-2 px-6 py-4 text-base font-medium text-black">
+      <li>
+        <a href="index.html" class="hover:text-yellow-500 font-bold block">Home</a>
+      </li>
+      <li>
+        <a href="customersupport.html" class="hover:text-yellow-500 font-bold block">Gold365 Customer care</a>
+      </li>
+      <li>
+        <a href="customerid.html" class="hover:text-yellow-500 font-bold block">Gold365 Id</a>
+      </li>
+      <li>
+        <a href="onlineiplid.html" class="hover:text-yellow-500 font-bold block">Gold365 IPL Online ID</a>
+      </li>
+      <li>
+        <a href="https://wa.link/bansalexch" class="mt-2 w-full bg-black text-white border-4 border-yellow-600 px-7 py-4 rounded-full hover:bg-yellow-500 transition-all text-base font-bold block text-center">
+          Get New Gold365 ID
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<script>
+// Mobile menu toggle
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+}
+</script>
+
+<main class="pt-24">
+  <section class="bg-white py-16 sm:py-20 px-4 sm:px-6 md:px-8" id="terms">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 text-center">
+        Terms and Conditions
+      </h1>
+      <div class="prose lg:prose-xl max-w-none">
+        <p><strong>Risk Disclosure Agreement for Gold365</strong></p>
+        <p>This Risk Disclosure Agreement ("Agreement") is entered into by and between Gold365 ("the Company"), a provider of online betting services for sports, casino games, and esports, and the user ("User") who accesses or engages with the services offered by Gold365, including but not limited to betting on live sports such as IPL cricket and football, casino games such as Teen Patti, Andar Bahar, Roulette, Baccarat, Poker, Slots, and Aviator, and esports betting on games like Dota 2, CS:GO, and Valorant. By registering for a Gold365 ID, placing bets, or otherwise utilizing the platform, the User acknowledges the inherent risks associated with online betting and agrees to be bound by the terms and conditions of this Agreement. The purpose of this Agreement is to ensure Users are fully informed of the financial, personal, and technical risks involved in betting on Gold365 and to reinforce the Company’s commitment to responsible gaming as outlined on the Gold365 website.</p>
+        
+        <p>Online betting, whether on sports, casino games, or esports, carries significant risks that Users must understand before participating. Gold365 is dedicated to providing a secure and trusted platform, as highlighted in its features such as advanced encryption, secure payment gateways, and fair play certification. However, the unpredictable nature of betting means there is no guarantee of winning, and Users may lose all funds wagered. This Agreement aims to educate Users on these risks and encourage responsible betting practices, ensuring that betting remains a form of entertainment rather than a financial strategy.</p>
+        
+        <p>The financial risks of betting on Gold365 are substantial. Users may lose their entire wager on any bet, whether placed on an IPL cricket match, a football game, a casino game like Aviator with its live multipliers, or an esports tournament. The outcomes of these activities depend on chance, player performance, or game dynamics, which are inherently uncertain. For example, live betting on Gold365, with its real-time odds for sports and esports, involves rapidly changing markets that can lead to unexpected losses. Users must only bet with funds they can afford to lose, as emphasized in Gold365’s responsible gaming guidelines and IPL betting tips. Gold365 encourages Users to set deposit limits and adhere to a budget to mitigate financial risks.</p>
+        
+        <p>Betting also carries the risk of developing addictive behaviour. The excitement of games like Teen Patti, Slots, or live sports betting can lead to excessive gambling if not managed properly. Gold365 advises Users to treat betting as entertainment, not a source of income, and to avoid chasing losses, as highlighted in the platform’s responsible gaming advice. The Company provides tools to set personal limits on deposits, wagers, or time spent on the platform to help Users maintain control. Users experiencing difficulties with betting habits are encouraged to contact Gold365’s 24/7 support team via WhatsApp, email or phone (+91 98765 43210) for guidance and support.</p>
+        
+        <p>Technical risks may also affect the betting experience. Internet connectivity issues, device malfunctions, or platform errors could disrupt gameplay or betting outcomes, particularly during live betting or real-time casino games. While Gold365 strives to maintain a reliable and mobile-friendly platform, as noted in its mobile betting features, Users are responsible for ensuring a stable internet connection. The Company’s support team is available 24/7 to address technical issues promptly, minimizing disruptions and ensuring a fair experience.</p>
+        
+        <p>Gold365’s bonuses, such as welcome offers, cashback, free spins, or daily promotions, are designed to enhance the betting experience but do not guarantee profits. These bonuses, as described on the Gold365 website, come with terms such as wagering requirements, and Users must understand that they do not eliminate the risk of loss. The platform’s fair play certification ensures that all games and odds are transparent, but success depends on chance and User decisions, not on Gold365’s promotions or features.</p>
+        
+        <p>Gold365 is committed to minimizing risks through its robust security measures and responsible gaming initiatives. The platform’s advanced encryption protects financial transactions, ensuring safe deposits and instant withdrawals. The 24/7 support team assists with account management, limit-setting, and technical issues, responding quickly to User inquiries. Gold365’s responsible gaming tools allow Users to pause accounts, set limits, or seek help, aligning with the platform’s advice to bet responsibly and avoid chasing losses.</p>
+        
+        <p>Users are responsible for understanding the risks outlined in this Agreement and making informed betting decisions. Gold365 does not provide financial advice, and Users must independently assess their financial capacity to bet. The Company will not be liable for losses incurred due to betting activities, technical issues, or failure to adhere to responsible gaming practices. Users must comply with Gold365’s terms and conditions, including age and jurisdictional requirements for online betting.</p>
+        
+        <p>This Agreement is governed by the laws of the jurisdiction in which Gold365 operates, as applicable to online betting platforms. Any disputes arising from this Agreement will be addressed through Gold365’s customer support or, if necessary, legal processes. Gold365 may amend this Agreement at any time, with updates posted on the website and communicated to Users via email or platform notifications. Continued use of Gold365 constitutes acceptance of the revised terms.</p>
+        
+        <p>For questions or support related to betting risks or responsible gaming, Users may contact Gold365’s 24/7 customer support team via WhatsApp, email) or phone (+91 98765 43210). The team is dedicated to ensuring a safe and enjoyable betting experience, aligning with Gold365’s mission to provide a trusted platform for all Users.</p>
+        
+        <p>Conditions Apply: By using Gold365’s services, including obtaining a Gold365 ID, placing bets, or engaging with customer support, the User acknowledges that this Agreement is subject to the terms and conditions outlined on the Gold365 website, including its responsible gaming guidelines, privacy policy, and betting policies. Gold365’s commitment to fairness, transparency, and security underpins this Agreement, ensuring Users can engage with the platform responsibly.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-gray-900 text-white pt-16 pb-10 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 md:gap-16">
+      
+      <!-- Logo and Description -->
+      <div class="flex flex-col gap-4">
+        <h2 class="text-2xl font-bold text-yellow-400">Gold365</h2>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Your trusted source for electrifying cricket betting experiences. Visit Gold365.net.in for expert tips, exclusive bonuses, and round-the-clock support.
+        </p>
+      </div>
+  
+      <!-- Navigation Links -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-semibold">Quick Links</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+          <li><a href="customersupport.html" class="hover:text-yellow-400">Customer Support</a></li>
+          <li><a href="customerid.html" class="hover:text-yellow-400">Customer ID</a></li>
+          <li><a href="onlineiplid.html" class="hover:text-yellow-400">Online IPL ID</a></li>
+        </ul>
+      </div>
+  
+      <!-- Subscribe Box -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-semibold">Subscribe</h3>
+        <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+          <label for="footer-email" class="text-sm text-gray-300">Get the latest updates and offers:</label>
+          <input type="email" id="footer-email" name="email" required placeholder="Enter your email"
+            class="px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+          <button type="submit"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded transition">Subscribe</button>
+        </form>
+      </div>
+  
+    </div>
+  
+    <!-- Bottom Bar -->
+    <div class="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <div class="mb-2 md:mb-0 text-center md:text-center">
+        © 2025 Gold365.net.in All rights reserved | R &#10084;
+      </div>
+      <div class="space-x-4">
+        <a href="privacy.html" class="hover:text-yellow-400">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-yellow-400">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+<!-- Add FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a2e8a4f96d.js" crossorigin="anonymous"></script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" aria-label="Scroll to top"
+  class="hidden fixed bottom-6 right-6 bg-yellow-700 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition">
+  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6 mx-auto">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<script>
+// Scroll to top button logic
+const scrollBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove('hidden');
+  } else {
+    scrollBtn.classList.add('hidden');
+  }
+});
+
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 800,
+      once: false,
+      offset: 50,
+      mirror: true,
+      disable: 'mobile',
+      startEvent: 'DOMContentLoaded',
+      disableMutationObserver: false,
+      delay: 0
+    });
+  });
+
+  // Refresh AOS on scroll
+  window.addEventListener('scroll', function () {
+    AOS.refresh();
+  });
+</script>
+</body>
+</html>
+

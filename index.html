@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold365 - Betting Site</title>
+  <link rel="icon" type="image/png" href="Images/title.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  
+  <style>
+    body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
+    /* Feature card top border effect */
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+    }
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #facc15, #f59e42);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 20;
+    }
+    .feature-card:hover::before,
+    .feature-card:focus::before,
+    .feature-card.group-hover::before {
+      transform: scaleX(1);
+    }
+
+    .modern-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07), 0 1.5px 6px 0 rgba(0,0,0,0.03);
+      transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+      background: #fff;
+    }
+    .modern-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #facc15, #f59e42);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 20;
+    }
+    .modern-card:hover::before,
+    .modern-card:focus::before {
+      transform: scaleX(1);
+    }
+    .modern-card:hover,
+    .modern-card:focus {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px 0 rgba(250,204,21,0.15), 0 2px 8px 0 rgba(0,0,0,0.06);
+    }
+
+    /* Testimonial Scroller */
+    .scroller {
+      max-width: 100%;
+    }
+
+    .scroller[data-animated="true"] {
+      overflow: hidden;
+      -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+      mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    }
+
+    .scroller[data-animated="true"] .scroller__inner {
+      width: max-content;
+      flex-wrap: nowrap;
+      animation: scroll 60s linear infinite;
+    }
+
+    .scroller:hover .scroller__inner {
+      animation-play-state: paused;
+    }
+    
+    .scroller__inner {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    @keyframes scroll {
+      to {
+        transform: translate(calc(-50% - 1rem));
+      }
+    }
+
+    .testimonial-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+    }
+    .testimonial-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #facc15, #f59e42);
+      z-index: 20;
+    }
+
+    #whatsapp-float-btn {
+      position: fixed;
+      left: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 100;
+      background: #25D366;
+      color: #fff;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      font-size: 2rem;
+      transition: all 0.3s ease;
+      animation: bounce-whatsapp 2s infinite;
+    }
+    #whatsapp-float-btn:hover {
+      background: #128C7E;
+      transform: scale(1.15);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+      color: #fff;
+      text-decoration: none;
+      animation: none;
+    }
+    #whatsapp-float-btn img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: contain;
+      display: block;
+    }
+    @keyframes bounce-whatsapp {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Navbar scroll effect */
+    nav.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Gradient animation for logo */
+    @keyframes gradient-shift {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradient-shift 3s ease infinite;
+    }
+
+    /* Slide down animation for mobile menu */
+    @keyframes slide-down {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-slide-down {
+      animation: slide-down 0.3s ease-out;
+    }
+
+    /* Fade in animations */
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fade-in-up 0.6s ease-out;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out;
+    }
+
+    /* Scale animation */
+    @keyframes scale-in {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .animate-scale-in {
+      animation: scale-in 0.5s ease-out;
+    }
+
+    /* Pulse animation */
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(250, 204, 21, 0.8);
+      }
+    }
+    .animate-pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    /* Hover animations for cards */
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    /* Shimmer effect */
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+    .shimmer {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite;
+    }
+  </style>
+
+</head>
+<body class="bg-yellow-50 text-black font-sans">
+
+<!-- Navbar -->
+<nav class="w-full bg-white/95 backdrop-blur-md fixed top-0 left-0 z-50 shadow-lg border-b border-yellow-100 transition-all duration-300" id="navbar">
+  <div class="mx-auto flex items-center justify-between px-4 md:px-8 py-4">
+    
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="#" class="group flex items-center space-x-2">
+        <span class="text-2xl md:text-3xl font-black bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 bg-clip-text text-transparent animate-gradient">
+          Gold365
+        </span>
+        <span class="hidden sm:inline-block w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></span>
+      </a>
+    </div>
+
+    <!-- Hamburger Menu Button (Tablet & Mobile Only) -->
+    <button id="mobile-menu-btn" class="lg:hidden flex items-center px-3 py-2 rounded-lg text-black border-2 border-yellow-500 hover:bg-yellow-50 focus:outline-none transition-all duration-300" aria-label="Open Menu">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Navigation Links (Desktop) -->
+    <ul class="hidden lg:flex space-x-6 xl:space-x-8 text-base font-medium text-black">
+      <li>
+        <a href="#" class="relative group font-bold text-gray-800 hover:text-yellow-600 transition-colors duration-300">
+          Home
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+      </li>
+      <li>
+        <a href="customersupport.html" class="relative group font-bold text-gray-800 hover:text-yellow-600 transition-colors duration-300">
+          Gold365 Customer care
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- CTA Button (Desktop) -->
+    <a href="https://wa.link/bansalexch" class="hidden lg:inline-block ml-4 bg-gradient-to-r from-black to-gray-800 text-white border-2 border-yellow-500 px-6 py-2.5 rounded-full hover:from-yellow-500 hover:to-yellow-600 hover:border-yellow-600 hover:shadow-lg hover:shadow-yellow-500/50 transition-all duration-300 text-sm font-bold transform hover:scale-105">
+      Get New Gold365 ID
+    </a>
+  </div>
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white/98 backdrop-blur-md shadow-xl border-t border-yellow-200 animate-slide-down">
+    <ul class="flex flex-col space-y-1 px-6 py-4 text-base font-medium text-black">
+      <li>
+        <a href="#" class="hover:text-yellow-600 hover:bg-yellow-50 font-bold block px-4 py-3 rounded-lg transition-all duration-300">Home</a>
+      </li>
+      <li>
+        <a href="customersupport.html" class="hover:text-yellow-600 hover:bg-yellow-50 font-bold block px-4 py-3 rounded-lg transition-all duration-300">Gold365 Customer care</a>
+      </li>
+      <li>
+        <a href="customerid.html" class="hover:text-yellow-600 hover:bg-yellow-50 font-bold block px-4 py-3 rounded-lg transition-all duration-300">Gold365 Id</a>
+      </li>
+      <li>
+        <a href="onlineiplid.html" class="hover:text-yellow-600 hover:bg-yellow-50 font-bold block px-4 py-3 rounded-lg transition-all duration-300">Gold365 IPL Online ID</a>
+      </li>
+      <li>
+        <a href="https://wa.link/bansalexch" class="mt-2 w-full bg-gradient-to-r from-black to-gray-800 text-white border-2 border-yellow-500 px-7 py-4 rounded-full hover:from-yellow-500 hover:to-yellow-600 hover:shadow-lg transition-all text-base font-bold block text-center transform hover:scale-105">
+          Get New Gold365 ID
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<script>
+// Mobile menu toggle
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+}
+
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+  
+  lastScroll = currentScroll;
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-fade-in-up');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe elements with data-animate attribute
+document.addEventListener('DOMContentLoaded', () => {
+  const animateElements = document.querySelectorAll('[data-animate]');
+  animateElements.forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+});
+</script>
+
+
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-yellow-100 pt-20 sm:pt-24">
+  <!-- Decorative Background Elements -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+  <div class="absolute top-0 right-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+  <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+  <!-- Main Content Container -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      
+      <!-- Left Content -->
+      <div class="text-center lg:text-left animate-fade-in-up" data-aos="fade-right">
+        <div class="inline-block mb-4 sm:mb-6 animate-scale-in" style="animation-delay: 0.1s;">
+          <span class="bg-yellow-500 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full uppercase tracking-wider shadow-lg animate-pulse-glow">
+            #1 Trusted Platform
+          </span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.2s;">
+          Your Ultimate
+          <span class="block text-yellow-600 mt-2 animate-gradient">Betting Destination</span>
+        </h1>
+        
+        <p class="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+          Experience seamless betting with Gold365. Get instant access to cricket, football, and casino games with 24/7 WhatsApp support and lightning-fast payouts.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-10 justify-center lg:justify-start animate-fade-in-up" style="animation-delay: 0.4s;">
+          <a href="https://wa.link/bansalexch" 
+             target="_blank"
+             class="group bg-black text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-yellow-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center text-sm sm:text-base border-4 border-yellow-500 animate-pulse-glow">
+            Get New ID Now
+            <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+          <a href="#about" 
+             class="bg-white text-gray-900 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center text-sm sm:text-base border-2 border-gray-300">
+            Learn More
+          </a>
+        </div>
+
+        <!-- Quick Features -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-xl mx-auto lg:mx-0 animate-fade-in-up" style="animation-delay: 0.5s;">
+          <div class="flex flex-col items-center lg:items-start card-hover p-3 rounded-lg">
+            <div class="text-2xl sm:text-3xl mb-2 transform hover:scale-125 transition-transform">⚡</div>
+            <p class="text-xs sm:text-sm font-semibold text-gray-700">Fast Payouts</p>
+          </div>
+          <div class="flex flex-col items-center lg:items-start card-hover p-3 rounded-lg">
+            <div class="text-2xl sm:text-3xl mb-2 transform hover:scale-125 transition-transform">🔒</div>
+            <p class="text-xs sm:text-sm font-semibold text-gray-700">Secure</p>
+          </div>
+          <div class="flex flex-col items-center lg:items-start card-hover p-3 rounded-lg">
+            <div class="text-2xl sm:text-3xl mb-2 transform hover:scale-125 transition-transform">🎮</div>
+            <p class="text-xs sm:text-sm font-semibold text-gray-700">Live Games</p>
+          </div>
+          <div class="flex flex-col items-center lg:items-start card-hover p-3 rounded-lg">
+            <div class="text-2xl sm:text-3xl mb-2 transform hover:scale-125 transition-transform">🎁</div>
+            <p class="text-xs sm:text-sm font-semibold text-gray-700">Bonuses</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image/Visual -->
+      <div class="relative flex justify-center lg:justify-end animate-fade-in-up" style="animation-delay: 0.6s;" data-aos="fade-left">
+        <div class="relative w-full max-w-md sm:max-w-lg">
+          <!-- Main Image Container -->
+          <div class="relative z-10 transform hover:scale-105 transition-transform duration-300 animate-scale-in">
+            <img src="Images/hero1.jpg" 
+                 alt="Gold365 Platform" 
+                 class="w-full h-auto rounded-2xl shadow-2xl"
+                 loading="eager" />
+          </div>
+          
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-yellow-500 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl shadow-xl z-20 transform rotate-[-5deg] hover:rotate-0 transition-transform animate-bounce-whatsapp" style="animation-duration: 3s;">
+            <p class="text-xs sm:text-sm font-bold">24/7 Support</p>
+            <p class="text-xs">WhatsApp Ready</p>
+          </div>
+          
+          <!-- Decorative Circle -->
+          <div class="absolute top-1/2 -right-8 sm:-right-12 w-24 h-24 sm:w-32 sm:h-32 bg-yellow-400 rounded-full opacity-20 blur-2xl -z-10 animate-pulse"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block">
+    <div class="animate-bounce">
+      <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+</style>
+
+
+<!-- Animations (add to your <style> or Tailwind config if not present) -->
+<style>
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 1s ease; }
+.animate-fade-in-up { animation: fade-in-up 1s ease; }
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+/* Feature card top border effect */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #facc15, #f59e42); /* yellow-400 to yellow-500 */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  z-index: 20;
+}
+.feature-card:hover::before,
+.feature-card:focus::before,
+.feature-card.group-hover::before {
+  transform: scaleX(1);
+}
+</style>
+
+
+<script>
+// Blog posts data - easily editable
+const blogPosts = [
+  {
+    id: 1,
+    category: "Cricket Tips",
+    title: "IPL 2025 Betting Strategies",
+    description: "Master the art of IPL betting with our comprehensive guide covering team analysis, player form, and pitch conditions.",
+    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+    link: "https://wa.link/bansalexch",
+    delay: 0
+  },
+  {
+    id: 2,
+    category: "Live Betting",
+    title: "Live Cricket Betting Guide",
+    description: "Learn how to maximize your profits with live betting during cricket matches. Expert tips for in-play wagering.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    link: "https://wa.link/bansalexch",
+    delay: 100
+  },
+  {
+    id: 3,
+    category: "Bankroll Management",
+    title: "Smart Money Management",
+    description: "Essential bankroll management strategies for cricket betting. Learn to bet responsibly and maximize long-term profits.",
+    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1",
+    link: "https://wa.link/bansalexch",
+    delay: 200
+  },
+  {
+    id: 4,
+    category: "Match Analysis",
+    title: "T20 World Cup Predictions",
+    description: "Get ahead with our expert analysis and predictions for the upcoming T20 World Cup matches and key players to watch.",
+    icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
+    link: "https://wa.link/bansalexch",
+    delay: 0
+  },
+  {
+    id: 5,
+    category: "Betting Tips",
+    title: "Football Betting Essentials",
+    description: "Discover winning strategies for football betting including league analysis, player stats, and match predictions.",
+    icon: "M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z",
+    link: "https://wa.link/bansalexch",
+    delay: 100
+  },
+  {
+    id: 6,
+    category: "Casino Games",
+    title: "Aviator Game Strategies",
+    description: "Master the popular Aviator game with proven strategies, timing tips, and bankroll management techniques.",
+    icon: "M12 19l9 2-9-18-9 18 9-2zm0 0v-8",
+    link: "https://wa.link/bansalexch",
+    delay: 200
+  }
+];
+
+// Function to create blog post HTML
+function createBlogPost(post) {
+  return `
+    <article class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="${post.delay}">
+      <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="${post.icon}"/>
+        </svg>
+      </div>
+      <div class="p-6">
+        <span class="text-yellow-600 text-xs font-semibold uppercase tracking-wide">${post.category}</span>
+        <h3 class="text-lg font-bold text-gray-900 mt-2 mb-3">${post.title}</h3>
+        <p class="text-gray-600 text-sm mb-4">${post.description}</p>
+        <a href="${post.link}" class="text-yellow-600 font-semibold text-sm hover:text-yellow-700 transition">Read More →</a>
+      </div>
+    </article>
+  `;
+}
+
+// Function to load blog posts
+function loadBlogPosts(postsToShow = 3) {
+  const blogGrid = document.getElementById('blog-grid');
+  const postsHtml = blogPosts.slice(0, postsToShow).map(post => createBlogPost(post)).join('');
+  blogGrid.innerHTML = postsHtml;
+  
+  // Refresh AOS animations
+  if (typeof AOS !== 'undefined') {
+    AOS.refresh();
+  }
+}
+
+// Function to add new blog post
+function addBlogPost(newPost) {
+  blogPosts.unshift({
+    id: Date.now(),
+    delay: 0,
+    link: "https://wa.link/bansalexch",
+    ...newPost
+  });
+  loadBlogPosts();
+}
+
+// Function to update existing blog post
+function updateBlogPost(id, updatedData) {
+  const index = blogPosts.findIndex(post => post.id === id);
+  if (index !== -1) {
+    blogPosts[index] = { ...blogPosts[index], ...updatedData };
+    loadBlogPosts();
+  }
+}
+
+// Function to remove blog post
+function removeBlogPost(id) {
+  const index = blogPosts.findIndex(post => post.id === id);
+  if (index !== -1) {
+    blogPosts.splice(index, 1);
+    loadBlogPosts();
+  }
+}
+
+// Load initial blog posts when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  loadBlogPosts();
+});
+
+// Example usage functions (you can call these from browser console or other scripts):
+/*
+// Add new blog post
+addBlogPost({
+  category: "New Category",
+  title: "New Blog Title",
+  description: "New blog description here...",
+  icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+});
+
+// Update existing post
+updateBlogPost(1, {
+  title: "Updated IPL 2025 Strategies",
+  description: "Updated description with new insights..."
+});
+
+// Remove a post
+removeBlogPost(1);
+*/
+</script>
+
+<!-- Features Section -->
+<section class="bg-gradient-to-br from-yellow-50 via-white to-gray-100 py-12 sm:py-16 md:py-20 px-2 sm:px-4 md:px-8" id="features">
+  <div class="mx-auto text-center mb-8 sm:mb-12" data-aos="fade-up">
+    <h4 class="text-yellow-500 font-bold text-xs sm:text-base tracking-widest mb-2 sm:mb-3 uppercase">Features</h4>
+    <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-4xl font-extrabold text-gray-900 mb-3 sm:mb-5 md:mb-6 leading-tight md:leading-tight">
+      Your Experience Gets Better With <br />
+      <span class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Gold365</span>
+    </h2>
+    <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-lg">
+      At Gold365, we redefine the world of online betting with a perfect mix of excitement, security, and convenience.
+    </p>
+  </div>
+
+  <!-- Features Grid -->
+  <div class="grid gap-6 sm:gap-8 md:gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto" style="opacity: 1; visibility: visible;">
+    <!-- Card 1 -->
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+      <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+        <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l5 5m0 0l5-5m-5 5V3" />
+        </svg>
+      </div>
+      <h3 class="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Secure WhatsApp Betting</h3>
+      <p class="text-gray-600 text-sm sm:text-base">
+        Gold365 introduces a revolutionary way to place bets using WhatsApp, making it easier than ever to stay connected and bet on the go. Our secure WhatsApp groups provide real-time updates, instant odds, and personalized support, ensuring a hassle-free experience.
+        <BR>•	How it works: Join our official WhatsApp group, receive live match updates, and place bets directly through the chat.
+        <BR>•	Why it's safe: All communications are encrypted, and our team verifies every transaction to protect your funds and data.
+       </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+      <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+        <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c1.104 0 2-.896 2-2V7a2 2 0 10-4 0v2c0 1.104.896 2 2 2z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 11h14v10H5z" />
+        </svg>
+      </div>
+      <h3 class="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Wide Range of Sports and Games</h3>
+      <p class="text-gray-600 text-sm sm:text-base">
+        From cricket betting to football, kabaddi, and more, Gold365 covers all major sports and events. Whether you're betting on the IPL, international matches, or niche tournaments, we've got you covered with competitive odds and diverse betting categories.
+<br>•	Popular Sports: Cricket, Football, Basketball, Tennis, and Kabaddi.
+<br>•	Special Features: Live betting, in-play odds, and cash-out options.
+
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+      <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+        <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v6h6M20 20v-6h-6M4 20a8 8 0 1116-16 8 8 0 000 16z" />
+        </svg>
+      </div>
+      <h3 class="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">. Trusted and Transparent</h3>
+      <p class="text-gray-600 text-sm sm:text-base">
+        With so many duplicate sites like Gold365.net or .in, it's natural to wonder, "Is Gold365 real or fake?" We're here to assure you that Gold365.net.in is the official site. Established in [Year of Launch], our platform is backed by a dedicated team committed to fair play and transparency.
+<br>•	Official Verification: Look for our watermark logo with the "Official" tag.
+<br>•	About Us: Learn more about our mission to revolutionize online betting in India.
+      </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+      <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+        <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 12v2m0 4h.01M12 4a8 8 0 100 16 8 8 0 000-16z" />
+        </svg>
+      </div>
+      <h3 class="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3"> Get Fast and Easy Gold365 ID</h3>
+      <p class="text-gray-600 text-sm sm:text-base">
+        Stay ahead in the game by joining our official WhatsApp group. Get real-time updates on upcoming matches, live odds, and the latest betting opportunities—all delivered straight to your phone.
+
+        Our expert team shares valuable tips, insights, and strategies to help you make informed bets. Whether you're a beginner or a seasoned player, you'll find the support you need to succeed.
+        <br>•	Steps to Join:
+        <br>1.	Click the WhatsApp button below.
+        <br>2.	Send us a message requesting your new Gold365 ID.
+        <br>3.	Our team will assist you instantly, 24/7!
+        <br>4.	Start betting!
+        
+      </p>
+      <a href="https://wa.link/bansalexch" target="_blank" class="inline-block bg-green-600 mt-4 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-green-700 transition text-sm">
+        <i class="fab fa-whatsapp mr-2"></i> Get New Gold365 ID on WhatsApp
+      </a>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+      <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+        <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l.517 1.59a1 1 0 00.95.69h1.683c.969 0 1.371 1.24.588 1.81l-1.36.988a1 1 0 00-.364 1.118l.518 1.59c.3.921-.755 1.688-1.54 1.118l-1.36-.988a1 1 0 00-1.176 0l-1.36.988c-.785.57-1.84-.197-1.54-1.118l.518-1.59a1 1 0 00-.364-1.118l-1.36-.988c-.783-.57-.38-1.81.588-1.81h1.683a1 1 0 00.95-.69l.517-1.59z" />
+        </svg>
+      </div>
+      <h3 class="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">24/7 Customer Support</h3>
+      <p class="text-gray-600 text-sm sm:text-base">
+        Our dedicated support team is available via WhatsApp and email to answer your queries, resolve issues, and guide you through the betting process. Whether you need help with the Gold365 app download or have questions about payouts, we're just a message away.
+        <br>.Got questions or need assistance? Our dedicated support team is available round the clock to assist you. Whether it's resolving issues or answering queries, we're just a click away to ensure a seamless betting experience.
+      </p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+      <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+        <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+        </svg>
+      </div>
+      <h3 class="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Exciting Bonuses & Promotions</h3>
+      <p class="text-gray-600 text-sm sm:text-base">
+        Keep the excitement alive with Gold365's Attendance Bonus, a daily reward system designed to fuel your betting passion. Simply log in to your account each day to unlock exclusive perks, such as free betting credits, enhanced odds on select matches, or access to premium betting markets.
+        <br> The more consecutive days you visit, the bigger the rewards, with special bonuses for loyal users who check in regularly. Whether you're a casual bettor or a dedicated cricket fan, our Attendance Bonus ensures every login brings you closer to bigger wins. Stay engaged, claim your daily rewards, and make every moment on Gold365 count.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section class="bg-white py-16 sm:py-20 px-4 sm:px-6 md:px-8" id="blog" style="opacity: 1; visibility: visible;">
+  <div class="mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h4 class="text-yellow-500 font-bold text-xs sm:text-base tracking-widest mb-2 sm:mb-3 uppercase">Latest Insights</h4>
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        Cricket Betting <span class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Blog</span>
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-lg">
+        Stay updated with expert tips, match predictions, and betting strategies from our cricket analysts.
+      </p>
+    </div>
+
+    <!-- Blog Grid -->
+    <div id="blog-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Blog posts will be dynamically loaded here -->
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-12" data-aos="fade-up">
+      <a href="https://wa.link/bansalexch" class="inline-block bg-yellow-600 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-yellow-700 transition-all transform hover:scale-105">
+        View All Articles
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-20 px-6" id="about" style="opacity: 1; visibility: visible;">
+  <div class="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+    <!-- Left Image or Illustration -->
+    <div>
+      <img src="Images/about.jpg" alt="About Gold365" class="rounded-lg shadow-md" loading="lazy">
+      
+    </div>
+
+    <!-- Right Content -->
+    <div>
+      <h4 class="text-yellow-500 font-semibold text-sm uppercase mb-2">About Us</h4>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Discover What Makes <span class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Gold365</span> Your <span class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">#1</span> Choice
+      </h2>
+      <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+        Gold365 is more than just an online betting platform—it's a haven for cricket enthusiasts who live for the thrill of the game. Our team of expert analysts, passionate about cricket's every nuance, delivers meticulously crafted predictions based on player form, pitch conditions, team strategies, and historical data. Whether you're a seasoned bettor analysing Test match trends or a casual fan betting on your favourite IPL team, we cater to all levels of expertise with a user-friendly interface and real-time updates. At Gold365, we're committed to making your betting journey seamless, exciting, and rewarding.
+      </p>
+      <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+        Our 24/7 customer support ensures you're never alone, offering personalized assistance to navigate any challenge. Visit Gold365.net.in to discover a platform built on trust, innovation, and a deep love for cricket. Join us today and become part of a community that celebrates every boundary, every wicket, and every victory.
+      </p>
+      <a href="https://wa.link/bansalexch" class="inline-block bg-yellow-700 text-white font-semibold px-6 py-3 rounded shadow hover:bg-yellow-500 transition">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray-50 py-20 px-6" id="games">
+  <div class="mx-auto text-center mb-12" data-aos="fade-up">
+    <h4 class="text-yellow-500 font-semibold text-sm uppercase mb-2">GAMES</h4>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">Betting Games</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-lg">
+      Explore the thrilling world of betting with Gold365, where you can indulge in your favorite games and sports, all under one roof.
+    </p>
+  </div>
+
+  <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
+    <!-- Game Card -->
+    <!-- <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/aviator.webp" alt="Aviator" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Aviator</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Real-Time Gameplay with Live Multipliers</li>
+            <li>✔ Instant Payouts</li>
+            <li>✔ Interactive Community</li>
+            <li>✔ Exciting Bonuses and Promotions</li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Football -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/football.png" alt="Football" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Football</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Daily Promotions for Football Betting Fans</li>
+            <li>✔ Match Analytics and Expert Predictions</li>
+            <li>✔ Instant Cashouts and Competitive Odds</li>
+            <li>✔ Live Odds and In-Play Real-Time Action</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Online Roulette -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/roullet.png" alt="Online Roulette" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Online Roulette</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Classic, European & American Variants</li>
+            <li>✔ Real-Time Gameplay</li>
+            <li>✔ Smooth User Experience</li>
+            <li>✔ Secure Transactions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cricket Betting -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/cricket.png" alt="Cricket Betting" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Cricket Betting</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Pre-Match & Live Global Cricket Betting</li>
+            <li>✔ Competitive IPL, T20, ODI, and Test Odds</li>
+            <li>✔ Real-Time Market & Match Updates</li>
+            <li>✔ Exclusive Cricket Enthusiast Bonuses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teen Patti -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/teenpati.png" alt="Teen Patti" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Teen Patti</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Live Dealer Experience</li>
+            <li>✔ Multiple Table Options</li>
+            <li>✔ Real-Time Chat</li>
+            <li>✔ Exciting Bonuses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Baccarat -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/Baccarat.png" alt="Baccarat" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Baccarat</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Classic & Speed Baccarat</li>
+            <li>✔ Professional Dealers</li>
+            <li>✔ High Roller Tables</li>
+            <li>✔ Secure Transactions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Poker -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/poker.png" alt="Poker" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Poker</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Texas Hold'em & Omaha</li>
+            <li>✔ Tournaments & Cash Games</li>
+            <li>✔ Multi-Table Play</li>
+            <li>✔ Player Leaderboards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Andar Bahar -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/andar.jpeg" alt="Andar Bahar" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Andar Bahar</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Fast-Paced Rounds</li>
+            <li>✔ Live Dealer</li>
+            <li>✔ Simple Rules</li>
+            <li>✔ Instant Payouts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slots -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/slots.png" alt="Slots" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Slots</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Classic & Video Slots</li>
+            <li>✔ Progressive Jackpots</li>
+            <li>✔ Free Spins</li>
+            <li>✔ Exciting Themes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Esports -->
+    <!-- <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 flex flex-col" data-aos="fade-up">
+      <img src="Images/games/esports.png" alt="Esports" class="h-60 w-full rounded-t-lg" loading="lazy">
+      <div class="p-5 flex-grow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Esports</h3>
+        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✔ Dota 2, CS:GO, Valorant & More</li>
+            <li>✔ Live Streaming</li>
+            <li>✔ In-Play Betting</li>
+            <li>✔ Global Tournaments</li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+
+  <!-- Why Play With Us Subsection -->
+  <section class="bg-white py-10 px-6">
+    <div class="mx-auto mt-8">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">Why Play With Us?</h3>
+        <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-lg">Experience the best in online betting with unbeatable features designed for your excitement, safety, and convenience.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" data-aos="fade-up">
+        <div class="modern-card flex flex-col items-center text-center p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <div class="bg-yellow-500 text-white w-14 h-14 flex items-center justify-center rounded-full mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          </div>
+          <h4 class="font-semibold text-2xl mb-2">Winning Strategies for Every Match</h4>
+          <p class="text-gray-600 text-xl">Success in cricket betting requires more than just luck—it demands strategy, and Gold365 delivers. Our platform provides tailored betting strategies for every format of the game, from the fast-paced chaos of T20s to the chess-like battles of Test cricket. Learn how to leverage toss outcomes, analyse in-play betting opportunities, and capitalize on key moments like powerplays or death overs. Our expert resources break down complex scenarios into actionable tips, helping you make smarter bets. With Gold365, you'll approach every match with confidence and a game plan for victory.</p>
+        </div>
+        <div class="modern-card flex flex-col items-center text-center p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <div class="bg-yellow-500 text-white w-14 h-14 flex items-center justify-center rounded-full mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 2c-1.657 0-3 1.343-3 3v2h6v-2c0-1.657-1.343-3-3-3z" /></svg>
+          </div>
+          <h4 class="font-semibold text-2xl mb-2">24/7 Live Support</h4>
+          <p class="text-gray-600 text-xl">In the fast-paced world of cricket betting, we know that questions and challenges can arise at any moment. That's why Gold365 offers round-the-clock customer support via WhatsApp, email, or phone, ensuring you're always supported. Our friendly, knowledgeable team is ready to assist with everything from account setup to understanding complex betting markets. Whether you're troubleshooting a technical issue or seeking advice on live betting options, we provide prompt, personalized solutions tailored to your needs. Our commitment to exceptional service means you can focus on the excitement of the game, knowing we've got your back. At Gold365, your satisfaction is our top priority, and we're just a message away, day or night.</p>
+        </div>
+        <div class="modern-card flex flex-col items-center text-center p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <div class="bg-yellow-500 text-white w-14 h-14 flex items-center justify-center rounded-full mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h18M9 3v18M15 3v18M3 9h18" /></svg>
+          </div>
+          <h4 class="font-semibold text-22xl mb-2">Expert Analysis for Smarter Bets</h4>
+          <p class="text-gray-600 text-xl">At Gold365, our team of cricket experts goes beyond the scorecard to deliver in-depth analysis you can rely on. We analyse team lineups, player fitness, pitch conditions, weather forecasts, and historical matchups to provide insights that give you an edge. Whether you're betting on an underdog in a local T20 league or a powerhouse in an international series, our data-driven predictions help you make informed decisions. From identifying value bets to spotting trends in player performances, our analysis empowers you to bet smarter and win bigger. Choose Gold365 for expertise that transforms your betting experience.</p>
+        </div>
+        <div class="modern-card flex flex-col items-center text-center p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <div class="bg-yellow-500 text-white w-14 h-14 flex items-center justify-center rounded-full mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>
+          </div>
+          <h4 class="font-semibold text-2xl mb-2">Instant Withdrawals</h4>
+          <p class="text-gray-600 text-xl">Cashing out your winnings should be as thrilling as hitting a match-winning six, and Gold365 makes it happen with our easy withdrawal system. Our platform offers a fast, secure, and transparent process, allowing you to access your funds with minimal hassle. Choose from a variety of payment methods, including bank transfers, e-wallets, and more, all designed to suit your convenience. Whether you've landed a big win or just want to enjoy your earnings, our streamlined system ensures your money reaches you quickly. Celebrate your success with Gold365's hassle-free withdrawals, built for winners..</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="bg-white py-20 px-6">
+    <div class="mx-auto" data-aos="fade-up">
+      <div class="text-center mb-12">
+        <h4 class="text-yellow-500 font-semibold text-sm uppercase mb-2">Contact Us</h4>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">Let's Connect Digitally</h2>
+        <p class="text-gray-600 text-lg">We're here for you 24/7. Reach out for support, inquiries, or partnerships—fast, friendly, and always online.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start" data-aos="fade-up">
+        <!-- Contact Form -->
+        <form class="space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" id="name" name="name" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="email" name="email" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea id="message" name="message" rows="5" required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+          </div>
+          <button type="submit"
+                  class="w-full bg-yellow-500 text-white font-semibold py-3 px-6 rounded-md hover:bg-yellow-600 transition">
+            Send Message
+          </button>
+        </form>
+
+        <!-- Modern Contact Info -->
+        <div class="flex flex-col gap-8 justify-center">
+          <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-6 shadow hover:shadow-md transition">
+            <span class="bg-yellow-500 text-white rounded-full p-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13a9 9 0 100-18 9 9 0 000 18z"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold text-gray-900">Email Us</p>
+              <a href="mailto:support@Gold365.net.in" class="text-yellow-600 hover:underline">support@Gold365.net.in</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-6 shadow hover:shadow-md transition">
+            <span class="bg-yellow-500 text-white rounded-full p-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.3 1.2a2 2 0 01-.45 1.95l-1.1 1.1a16.001 16.001 0 006.36 6.36l1.1-1.1a2 2 0 011.95-.45l1.2.3A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C7.163 21 3 16.837 3 12V11a2 2 0 012-2z"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold text-gray-900">Phone Support</p>
+              <a href="tel:+919876543210" class="text-yellow-600 hover:underline">+91 98765 43210 (24/7)</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-6 shadow hover:shadow-md transition">
+            <span class="bg-green-500 text-white rounded-full p-3">
+              <i class="fab fa-whatsapp fa-lg"></i>
+            </span>
+            <div>
+              <p class="font-semibold text-gray-900">WhatsApp</p>
+              <a href="https://wa.link/bansalexch" class="text-green-600 hover:underline">Chat Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="bg-gray-50 py-20 px-6">
+    <div class="mx-auto text-center mb-12" data-aos="fade-up">
+      <h4 class="text-yellow-500 font-semibold text-sm uppercase mb-2">Testimonials</h4>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">What Our Users Say</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-lg">
+        We are trusted by thousands of users. Here's what some of them have to say about their experience with Gold365.
+      </p>
+    </div>
+  
+    <div class="scroller" data-animated="true">
+      <ul class="scroller__inner">
+        <li class="testimonial-card bg-white p-8 rounded-2xl shadow-lg w-96">
+          <div class="flex items-center mb-4">
+            <img src="https://i.pravatar.cc/48?u=1" alt="Rohan Sharma" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Rohan Sharma</h4>
+              <p class="text-yellow-600">Verified Bettor</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"Gold365 is the most reliable betting site I've ever used. The WhatsApp integration is genius and makes everything so convenient. Withdrawals are super fast!"</p>
+        </li>
+        <li class="testimonial-card bg-white p-8 rounded-2xl shadow-lg w-96">
+          <div class="flex items-center mb-4">
+            <img src="https://i.pravatar.cc/48?u=2" alt="Priya Patel" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Priya Patel</h4>
+              <p class="text-yellow-600">Casino Player</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"I love the variety of games, especially Aviator and the live casino options. The platform is secure and the 24/7 support is very responsive."</p>
+        </li>
+        <li class="testimonial-card bg-white p-8 rounded-2xl shadow-lg w-96">
+          <div class="flex items-center mb-4">
+            <img src="https://i.pravatar.cc/48?u=3" alt="Arjun Singh" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Arjun Singh</h4>
+              <p class="text-yellow-600">Cricket Fanatic</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"The cricket betting odds are the best I've found. The expert analysis in the blog section has helped me make much smarter bets. Highly recommended!"</p>
+        </li>
+        <li class="testimonial-card bg-white p-8 rounded-2xl shadow-lg w-96">
+          <div class="flex items-center mb-4">
+            <img src="https://i.pravatar.cc/48?u=4" alt="Sneha Reddy" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Sneha Reddy</h4>
+              <p class="text-yellow-600">New User</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"Getting my ID was instant on WhatsApp. The platform is so easy to navigate. The attendance bonus is a nice touch that keeps me coming back."</p>
+        </li>
+         <li class="testimonial-card bg-white p-8 rounded-2xl shadow-lg w-96">
+          <div class="flex items-center mb-4">
+            <img src="https://i.pravatar.cc/48?u=5" alt="Vikram Kumar" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Vikram Kumar</h4>
+              <p class="text-yellow-600">Football Bettor</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"Finally, a site that takes football betting seriously in India. Great odds and a wide range of markets. The instant withdrawal is a huge plus."</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white pt-16 pb-10 px-6">
+    <div class="mx-auto grid md:grid-cols-3 gap-10 md:gap-16">
+      
+      <!-- Logo and Description -->
+      <div class="flex flex-col gap-4">
+        <h2 class="text-2xl font-bold text-yellow-400">Gold365</h2>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Your trusted source for electrifying cricket betting experiences. Visit Gold365.net.in for expert tips, exclusive bonuses, and round-the-clock support.
+        </p>
+      </div>
+  
+      <!-- Navigation Links -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-semibold">Quick Links</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+          <li><a href="customersupport.html" class="hover:text-yellow-400">Customer Support</a></li>
+        </ul>
+      </div>
+  
+      <!-- Subscribe Box -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-semibold">Subscribe</h3>
+        <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+          <label for="footer-email" class="text-sm text-gray-300">Get the latest updates and offers:</label>
+          <input type="email" id="footer-email" name="email" required placeholder="Enter your email"
+            class="px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+          <button type="submit"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded transition">Subscribe</button>
+        </form>
+      </div>
+  
+    </div>
+  
+    <!-- Bottom Bar -->
+    <div class="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <div class="mb-2 md:mb-0 text-center md:text-center">
+        © 2025 Gold365.net.in All rights reserved | R &#10084;
+      </div>
+      <div class="space-x-4">
+        <a href="privacy.html" class="hover:text-yellow-400">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-yellow-400">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+<!-- Add FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a2e8a4f96d.js" crossorigin="anonymous"></script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" aria-label="Scroll to top"
+  class="hidden fixed bottom-6 right-6 bg-yellow-700 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition">
+  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6 mx-auto">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.link/bansalexch" target="_blank" rel="noopener noreferrer" id="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+  <img src="Images/whatsapp.png" alt="WhatsApp" style="width: 64px; height: 64px; object-fit: contain; display: block;" />
+</a>
+
+<script>
+// Scroll to top button logic
+const scrollBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove('hidden');
+  } else {
+    scrollBtn.classList.add('hidden');
+  }
+});
+
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 800,
+      once: false,
+      offset: 50,
+      mirror: true,
+      disable: 'mobile',
+      startEvent: 'DOMContentLoaded',
+      disableMutationObserver: false,
+      delay: 0
+    });
+  });
+
+  // Refresh AOS on scroll
+  window.addEventListener('scroll', function () {
+    AOS.refresh();
+  });
+</script>
+<script>
+  // Testimonial Scroller
+  const scrollers = document.querySelectorAll(".scroller");
+  
+  if (scrollers.length > 0) {
+    scrollers.forEach((scroller) => {
+      scroller.setAttribute("data-animated", true);
+
+      const scrollerInner = scroller.querySelector(".scroller__inner");
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      scrollerContent.forEach(item => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    });
+  }
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
