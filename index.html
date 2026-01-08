@@ -12,6 +12,12 @@
   
   <style>
     body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
+    
+    /* Ensure feature cards remain visible after AOS animation */
+    .feature-card.aos-animate {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
     /* Feature card top border effect */
     .feature-card {
       position: relative;
@@ -281,10 +287,8 @@
 <body class="bg-yellow-50 text-black font-sans">
 
 <!-- Navbar -->
-<nav class="w-full bg-white/95 backdrop-blur-md fixed top-0 left-0 z-50 shadow-lg border-b border-yellow-100 transition-all duration-300" id="navbar">
-  <div class="mx-auto flex items-center justify-between px-4 md:px-8 py-4">
-    
-    <!-- Logo -->
+<nav class="w-full bg-white fixed top-0 left-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-4">
     <div class="flex items-center">
       <a href="#" class="group flex items-center space-x-2">
         <span class="text-2xl md:text-3xl font-black bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 bg-clip-text text-transparent animate-gradient">
@@ -293,52 +297,35 @@
         <span class="hidden sm:inline-block w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></span>
       </a>
     </div>
-
-    <!-- Hamburger Menu Button (Tablet & Mobile Only) -->
-    <button id="mobile-menu-btn" class="lg:hidden flex items-center px-3 py-2 rounded-lg text-black border-2 border-yellow-500 hover:bg-yellow-50 focus:outline-none transition-all duration-300" aria-label="Open Menu">
+    <button id="mobile-menu-btn" class="lg:hidden flex items-center px-3 py-2 border rounded text-black border-gray-400 focus:outline-none" aria-label="Open Menu">
       <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
+    <ul class="hidden lg:flex space-x-8 text-base font-medium text-black">
+      <li>
+        <a href="index.html" class="hover:text-yellow-500 font-bold">Home</a>
+      </li>
+      <li>
+        <a href="customersupport.html" class="hover:text-yellow-500 font-bold text-yellow-500">Gold365 Customer care</a>
+      </li>
 
-    <!-- Navigation Links (Desktop) -->
-    <ul class="hidden lg:flex space-x-6 xl:space-x-8 text-base font-medium text-black">
-      <li>
-        <a href="#" class="relative group font-bold text-gray-800 hover:text-yellow-600 transition-colors duration-300">
-          Home
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
-        </a>
-      </li>
-      <li>
-        <a href="customersupport.html" class="relative group font-bold text-gray-800 hover:text-yellow-600 transition-colors duration-300">
-          Gold365 Customer care
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
-        </a>
-      </li>
     </ul>
-
-    <!-- CTA Button (Desktop) -->
-    <a href="https://wa.link/bansalexch" class="hidden lg:inline-block ml-4 bg-gradient-to-r from-black to-gray-800 text-white border-2 border-yellow-500 px-6 py-2.5 rounded-full hover:from-yellow-500 hover:to-yellow-600 hover:border-yellow-600 hover:shadow-lg hover:shadow-yellow-500/50 transition-all duration-300 text-sm font-bold transform hover:scale-105">
+    <a href="#" class="hidden lg:inline-block ml-4 bg-black text-white border-4 border-yellow-600 px-7 py-3 rounded-full hover:bg-yellow-500 transition-all text-sm font-bold">
       Get New Gold365 ID
     </a>
   </div>
-  <!-- Mobile Menu Dropdown -->
-  <div id="mobile-menu" class="lg:hidden hidden bg-white/98 backdrop-blur-md shadow-xl border-t border-yellow-200 animate-slide-down">
-    <ul class="flex flex-col space-y-1 px-6 py-4 text-base font-medium text-black">
+  <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-md border-t border-gray-200">
+    <ul class="flex flex-col space-y-2 px-6 py-4 text-base font-medium text-black">
       <li>
-        <a href="#" class="hover:text-yellow-600 hover:bg-yellow-50 font-bold block px-4 py-3 rounded-lg transition-all duration-300">Home</a>
+        <a href="index.html" class="hover:text-yellow-500 font-bold block">Home</a>
       </li>
       <li>
-        <a href="customersupport.html" class="hover:text-yellow-600 hover:bg-yellow-50 font-bold block px-4 py-3 rounded-lg transition-all duration-300">Gold365 Customer care</a>
+        <a href="customersupport.html" class="hover:text-yellow-500 font-bold block text-yellow-500">Gold365 Customer care</a>
       </li>
       <li>
-        <a href="customerid.html" class="hover:text-yellow-600 hover:bg-yellow-50 font-bold block px-4 py-3 rounded-lg transition-all duration-300">Gold365 Id</a>
-      </li>
-      <li>
-        <a href="onlineiplid.html" class="hover:text-yellow-600 hover:bg-yellow-50 font-bold block px-4 py-3 rounded-lg transition-all duration-300">Gold365 IPL Online ID</a>
-      </li>
-      <li>
-        <a href="https://wa.link/bansalexch" class="mt-2 w-full bg-gradient-to-r from-black to-gray-800 text-white border-2 border-yellow-500 px-7 py-4 rounded-full hover:from-yellow-500 hover:to-yellow-600 hover:shadow-lg transition-all text-base font-bold block text-center transform hover:scale-105">
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="mt-2 w-full bg-black text-white border-4 border-yellow-600 px-7 py-4 rounded-full hover:bg-yellow-500 transition-all text-base font-bold block text-center">
           Get New Gold365 ID
         </a>
       </li>
@@ -371,29 +358,8 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate-fade-in-up');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-// Observe elements with data-animate attribute
-document.addEventListener('DOMContentLoaded', () => {
-  const animateElements = document.querySelectorAll('[data-animate]');
-  animateElements.forEach(el => {
-    el.style.opacity = '0';
-    observer.observe(el);
-  });
-});
+// Note: AOS (Animate On Scroll) library handles animations for elements with data-aos attributes
+// No need for additional Intersection Observer as it conflicts with AOS
 </script>
 
 
@@ -427,7 +393,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-10 justify-center lg:justify-start animate-fade-in-up" style="animation-delay: 0.4s;">
-          <a href="https://wa.link/bansalexch" 
+          <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" 
              target="_blank"
              class="group bg-black text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-yellow-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center text-sm sm:text-base border-4 border-yellow-500 animate-pulse-glow">
             Get New ID Now
@@ -571,7 +538,7 @@ const blogPosts = [
     title: "IPL 2025 Betting Strategies",
     description: "Master the art of IPL betting with our comprehensive guide covering team analysis, player form, and pitch conditions.",
     icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-    link: "https://wa.link/bansalexch",
+    link: "https://wa.me/919296274159?text=hello%20i%20want%20to%20connect",
     delay: 0
   },
   {
@@ -580,7 +547,7 @@ const blogPosts = [
     title: "Live Cricket Betting Guide",
     description: "Learn how to maximize your profits with live betting during cricket matches. Expert tips for in-play wagering.",
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
-    link: "https://wa.link/bansalexch",
+    link: "https://wa.me/919296274159?text=hello%20i%20want%20to%20connect",
     delay: 100
   },
   {
@@ -589,7 +556,7 @@ const blogPosts = [
     title: "Smart Money Management",
     description: "Essential bankroll management strategies for cricket betting. Learn to bet responsibly and maximize long-term profits.",
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1",
-    link: "https://wa.link/bansalexch",
+    link: "https://wa.me/919296274159?text=hello%20i%20want%20to%20connect",
     delay: 200
   },
   {
@@ -598,7 +565,7 @@ const blogPosts = [
     title: "T20 World Cup Predictions",
     description: "Get ahead with our expert analysis and predictions for the upcoming T20 World Cup matches and key players to watch.",
     icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
-    link: "https://wa.link/bansalexch",
+    link: "https://wa.me/919296274159?text=hello%20i%20want%20to%20connect",
     delay: 0
   },
   {
@@ -607,7 +574,7 @@ const blogPosts = [
     title: "Football Betting Essentials",
     description: "Discover winning strategies for football betting including league analysis, player stats, and match predictions.",
     icon: "M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z",
-    link: "https://wa.link/bansalexch",
+    link: "https://wa.me/919296274159?text=hello%20i%20want%20to%20connect",
     delay: 100
   },
   {
@@ -616,7 +583,7 @@ const blogPosts = [
     title: "Aviator Game Strategies",
     description: "Master the popular Aviator game with proven strategies, timing tips, and bankroll management techniques.",
     icon: "M12 19l9 2-9-18-9 18 9-2zm0 0v-8",
-    link: "https://wa.link/bansalexch",
+    link: "https://wa.me/919296274159?text=hello%20i%20want%20to%20connect",
     delay: 200
   }
 ];
@@ -643,12 +610,16 @@ function createBlogPost(post) {
 // Function to load blog posts
 function loadBlogPosts(postsToShow = 3) {
   const blogGrid = document.getElementById('blog-grid');
+  if (!blogGrid) return;
+  
   const postsHtml = blogPosts.slice(0, postsToShow).map(post => createBlogPost(post)).join('');
   blogGrid.innerHTML = postsHtml;
   
-  // Refresh AOS animations
-  if (typeof AOS !== 'undefined') {
-    AOS.refresh();
+  // Refresh AOS animations only if AOS is already initialized
+  if (typeof AOS !== 'undefined' && AOS) {
+    setTimeout(() => {
+      AOS.refresh();
+    }, 100);
   }
 }
 
@@ -657,7 +628,7 @@ function addBlogPost(newPost) {
   blogPosts.unshift({
     id: Date.now(),
     delay: 0,
-    link: "https://wa.link/bansalexch",
+    link: "https://wa.me/919296274159?text=hello%20i%20want%20to%20connect",
     ...newPost
   });
   loadBlogPosts();
@@ -681,9 +652,12 @@ function removeBlogPost(id) {
   }
 }
 
-// Load initial blog posts when page loads
+// Load initial blog posts when page loads (will be called after AOS is initialized)
 document.addEventListener('DOMContentLoaded', function() {
-  loadBlogPosts();
+  // Wait a bit to ensure AOS is initialized first
+  setTimeout(function() {
+    loadBlogPosts();
+  }, 200);
 });
 
 // Example usage functions (you can call these from browser console or other scripts):
@@ -723,7 +697,7 @@ removeBlogPost(1);
   <!-- Features Grid -->
   <div class="grid gap-6 sm:gap-8 md:gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto" style="opacity: 1; visibility: visible;">
     <!-- Card 1 -->
-    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up">
       <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
         <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l5 5m0 0l5-5m-5 5V3" />
@@ -738,7 +712,7 @@ removeBlogPost(1);
     </div>
 
     <!-- Card 2 -->
-    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up">
       <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
         <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c1.104 0 2-.896 2-2V7a2 2 0 10-4 0v2c0 1.104.896 2 2 2z" />
@@ -755,7 +729,7 @@ removeBlogPost(1);
     </div>
 
     <!-- Card 3 -->
-    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up">
       <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
         <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v6h6M20 20v-6h-6M4 20a8 8 0 1116-16 8 8 0 000 16z" />
@@ -770,7 +744,7 @@ removeBlogPost(1);
     </div>
 
     <!-- Card 4 -->
-    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up">
       <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
         <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 12v2m0 4h.01M12 4a8 8 0 100 16 8 8 0 000-16z" />
@@ -788,13 +762,14 @@ removeBlogPost(1);
         <br>4.	Start betting!
         
       </p>
-      <a href="https://wa.link/bansalexch" target="_blank" class="inline-block bg-green-600 mt-4 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-green-700 transition text-sm">
+      <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" target="_blank" class="inline-block bg-green-600 mt-4 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-green-700 transition text-sm">
         <i class="fab fa-whatsapp mr-2"></i> Get New Gold365 ID on WhatsApp
       </a>
     </div>
 
     <!-- Card 5 -->
-    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up">
       <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
         <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l.517 1.59a1 1 0 00.95.69h1.683c.969 0 1.371 1.24.588 1.81l-1.36.988a1 1 0 00-.364 1.118l.518 1.59c.3.921-.755 1.688-1.54 1.118l-1.36-.988a1 1 0 00-1.176 0l-1.36.988c-.785.57-1.84-.197-1.54-1.118l.518-1.59a1 1 0 00-.364-1.118l-1.36-.988c-.783-.57-.38-1.81.588-1.81h1.683a1 1 0 00.95-.69l.517-1.59z" />
@@ -808,7 +783,7 @@ removeBlogPost(1);
     </div>
 
     <!-- Card 6 -->
-    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up" data-animate>
+    <div class="feature-card group bg-white/80 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-yellow-100 card-hover" data-aos="fade-up">
       <div class="bg-gradient-to-tr from-yellow-400 to-yellow-500 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
         <svg class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
@@ -844,7 +819,8 @@ removeBlogPost(1);
 
     <!-- View All Button -->
     <div class="text-center mt-12" data-aos="fade-up">
-      <a href="https://wa.link/bansalexch" class="inline-block bg-yellow-600 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-yellow-700 transition-all transform hover:scale-105">
+      <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-yellow-600 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-yellow-700 transition-all transform hover:scale-105">
         View All Articles
       </a>
     </div>
@@ -871,7 +847,8 @@ removeBlogPost(1);
       <p class="text-gray-600 text-lg mb-6 leading-relaxed">
         Our 24/7 customer support ensures you're never alone, offering personalized assistance to navigate any challenge. Visit Gold365.net.in to discover a platform built on trust, innovation, and a deep love for cricket. Join us today and become part of a community that celebrates every boundary, every wicket, and every victory.
       </p>
-      <a href="https://wa.link/bansalexch" class="inline-block bg-yellow-700 text-white font-semibold px-6 py-3 rounded shadow hover:bg-yellow-500 transition">
+      <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-yellow-700 text-white font-semibold px-6 py-3 rounded shadow hover:bg-yellow-500 transition">
         Contact Us
       </a>
     </div>
@@ -893,7 +870,8 @@ removeBlogPost(1);
       <img src="Images/games/aviator.webp" alt="Aviator" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Aviator</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -911,7 +889,8 @@ removeBlogPost(1);
       <img src="Images/games/football.png" alt="Football" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Football</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -929,7 +908,8 @@ removeBlogPost(1);
       <img src="Images/games/roullet.png" alt="Online Roulette" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Online Roulette</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -947,7 +927,8 @@ removeBlogPost(1);
       <img src="Images/games/cricket.png" alt="Cricket Betting" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Cricket Betting</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -965,7 +946,8 @@ removeBlogPost(1);
       <img src="Images/games/teenpati.png" alt="Teen Patti" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Teen Patti</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -983,7 +965,8 @@ removeBlogPost(1);
       <img src="Images/games/Baccarat.png" alt="Baccarat" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Baccarat</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -1001,7 +984,8 @@ removeBlogPost(1);
       <img src="Images/games/poker.png" alt="Poker" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Poker</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -1019,7 +1003,8 @@ removeBlogPost(1);
       <img src="Images/games/andar.jpeg" alt="Andar Bahar" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Andar Bahar</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -1037,7 +1022,8 @@ removeBlogPost(1);
       <img src="Images/games/slots.png" alt="Slots" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Slots</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -1055,7 +1041,8 @@ removeBlogPost(1);
       <img src="Images/games/esports.png" alt="Esports" class="h-60 w-full rounded-t-lg" loading="lazy">
       <div class="p-5 flex-grow">
         <h3 class="text-lg font-semibold text-gray-900 mb-3">Esports</h3>
-        <a href="https://wa.link/bansalexch" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
+        <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="inline-block bg-gray-900 text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition mb-4">Bet Now</a>
         <div>
           <h4 class="text-sm font-semibold text-gray-700 mb-2 uppercase">What's Included</h4>
           <ul class="space-y-2 text-sm text-gray-600">
@@ -1162,7 +1149,7 @@ removeBlogPost(1);
             </span>
             <div>
               <p class="font-semibold text-gray-900">Phone Support</p>
-              <a href="tel:+919876543210" class="text-yellow-600 hover:underline">+91 98765 43210 (24/7)</a>
+              <a href="tel:+919296274159" class="text-yellow-600 hover:underline">+91 9296274159 (24/7)</a>
             </div>
           </div>
           <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-6 shadow hover:shadow-md transition">
@@ -1171,7 +1158,8 @@ removeBlogPost(1);
             </span>
             <div>
               <p class="font-semibold text-gray-900">WhatsApp</p>
-              <a href="https://wa.link/bansalexch" class="text-green-600 hover:underline">Chat Now</a>
+              <a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" class="text-green-600 hover:underline">Chat Now</a>
             </div>
           </div>
         </div>
@@ -1304,7 +1292,8 @@ removeBlogPost(1);
   </svg>
 </button>
 <!-- Floating WhatsApp Button -->
-<a href="https://wa.link/bansalexch" target="_blank" rel="noopener noreferrer" id="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/919296274159?text=hello%20i%20want%20to%20connect
+" target="_blank" rel="noopener noreferrer" id="whatsapp-float-btn" aria-label="Chat on WhatsApp">
   <img src="Images/whatsapp.png" alt="WhatsApp" style="width: 64px; height: 64px; object-fit: contain; display: block;" />
 </a>
 
@@ -1327,42 +1316,41 @@ scrollBtn.addEventListener('click', () => {
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+  // Initialize everything once when DOM is ready
   document.addEventListener('DOMContentLoaded', function () {
-    AOS.init({
-      duration: 800,
-      once: false,
-      offset: 50,
-      mirror: true,
-      disable: 'mobile',
-      startEvent: 'DOMContentLoaded',
-      disableMutationObserver: false,
-      delay: 0
-    });
-  });
-
-  // Refresh AOS on scroll
-  window.addEventListener('scroll', function () {
-    AOS.refresh();
-  });
-</script>
-<script>
-  // Testimonial Scroller
-  const scrollers = document.querySelectorAll(".scroller");
-  
-  if (scrollers.length > 0) {
-    scrollers.forEach((scroller) => {
-      scroller.setAttribute("data-animated", true);
-
-      const scrollerInner = scroller.querySelector(".scroller__inner");
-      const scrollerContent = Array.from(scrollerInner.children);
-
-      scrollerContent.forEach(item => {
-        const duplicatedItem = item.cloneNode(true);
-        duplicatedItem.setAttribute("aria-hidden", true);
-        scrollerInner.appendChild(duplicatedItem);
+    // Initialize AOS only once
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        once: true, // Animate only once when element enters viewport
+        offset: 100,
+        mirror: false, // Don't animate again when scrolling back up
+        disable: false, // Enable on all devices
+        disableMutationObserver: false,
+        delay: 0
       });
-    });
-  }
+    }
+    
+    // Initialize Testimonial Scroller
+    const scrollers = document.querySelectorAll(".scroller");
+    
+    if (scrollers.length > 0) {
+      scrollers.forEach((scroller) => {
+        scroller.setAttribute("data-animated", true);
+
+        const scrollerInner = scroller.querySelector(".scroller__inner");
+        if (scrollerInner) {
+          const scrollerContent = Array.from(scrollerInner.children);
+
+          scrollerContent.forEach(item => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("aria-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
+          });
+        }
+      });
+    }
+  });
 </script>
 
 
